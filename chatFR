@@ -41,7 +41,7 @@
 			 },{
 			"label":"Adresse e-mail",
 			"transcriptFields": ["Email__c"]
-			 },{
+			 },{<<<<<<<<f
 			"label":"Téléphone",
 			"transcriptFields": ["Phone__c"]
 			 },{
@@ -66,8 +66,20 @@
 				isOfflineSupportEnabled: false
 			}
 		);
-		embedded_svc.settings.defaultMinimizedText = 'JP Bot';
-		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)'; 
+// 👇👇👇 COLLE CE BLOC ICI 👇👇👇
+const observer = new MutationObserver(function () {
+	const headerTitle = document.querySelector('.embeddedServiceSidebarHeader .sidebarHeaderTitle');
+	if (headerTitle && headerTitle.textContent.trim() === 'Chat') {
+		headerTitle.textContent = 'JP Bot';
+		console.log('Titre du chat remplacé par JP Bot ✅');
+		observer.disconnect();
+	}
+});
+
+observer.observe(document.body, {
+	childList: true,
+	subtree: true
+});
 	};
 
 	if (!window.embedded_svc) {
@@ -80,19 +92,6 @@
 	} else {
 		initESW('https://service.force.com');
 	}
-// Attendre que l'élément du header soit disponible, puis remplacer "Chat" par "JP Bot"
-const observer = new MutationObserver(function () {
-    const headerTitle = document.querySelector('.embeddedServiceSidebarHeader .sidebarHeaderTitle');
-    if (headerTitle && headerTitle.textContent === 'Chat') {
-        headerTitle.textContent = 'JP Bot';
-        observer.disconnect(); // stop l’observation une fois que c’est remplacé
-    }
-});
-
-observer.observe(document.body, {
-    childList: true,
-    subtree: true
-});
 
 </script>
 </html>
