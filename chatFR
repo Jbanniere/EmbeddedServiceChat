@@ -67,7 +67,6 @@
 			}
 		);
 		embedded_svc.settings.defaultMinimizedText = 'JP Bot';
-
 		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)'; 
 	};
 
