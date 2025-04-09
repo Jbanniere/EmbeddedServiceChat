@@ -40,7 +40,7 @@
 			 },{
 			"label":"Adresse e-mail",
 			"transcriptFields": ["Email__c"]
-			 },{<<<<<<<<f
+			 },{
 			"label":"Téléphone",
 			"transcriptFields": ["Phone__c"]
 			 },{
