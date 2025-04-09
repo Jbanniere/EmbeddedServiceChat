@@ -7,12 +7,6 @@
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #005290;
 	}
-	.embeddedServiceSidebarHeader .sidebarHeaderTitle:before {
-	    content: 'JP Bot';
-	}
-	.embeddedServiceSidebarHeader .sidebarHeaderTitle {
-	    font-size: 0;
-	}
 </style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -47,7 +41,7 @@
 			 },{
 			"label":"Adresse e-mail",
 			"transcriptFields": ["Email__c"]
-			 },{
+			 },{<<<<<<<<f
 			"label":"Téléphone",
 			"transcriptFields": ["Phone__c"]
 			 },{
@@ -72,8 +66,20 @@
 				isOfflineSupportEnabled: false
 			}
 		);
-		embedded_svc.settings.defaultMinimizedText = 'JP Bot';
-		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)'; 
+// 👇👇👇 COLLE CE BLOC ICI 👇👇👇
+const observer = new MutationObserver(function () {
+	const headerTitle = document.querySelector('.embeddedServiceSidebarHeader .sidebarHeaderTitle');
+	if (headerTitle && headerTitle.textContent.trim() === 'Chat') {
+		headerTitle.textContent = 'JP Bot';
+		console.log('Titre du chat remplacé par JP Bot ✅');
+		observer.disconnect();
+	}
+});
+
+observer.observe(document.body, {
+	childList: true,
+	subtree: true
+});
 	};
 
 	if (!window.embedded_svc) {
@@ -86,5 +92,6 @@
 	} else {
 		initESW('https://service.force.com');
 	}
+
 </script>
 </html>
