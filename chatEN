@@ -1,15 +1,14 @@
-<html>
-<style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: "Arial", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
-	}
-</style>
-
 <script type='text/javascript'>
+	// Charger le script esw.min.js et initialiser le chat une fois le script chargé
+	window.onload = function() {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://service.force.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW('https://service.force.com');
+		};
+		document.body.appendChild(s);
+	};
+
 	// Initialiser le chat après le chargement de Salesforce Embedded Service
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; // Ou false
@@ -50,13 +49,4 @@
 			observer.observe(targetNode, config); // Observer l'élément qui contient le titre
 		}
 	};
-
-	// Charger le script esw.min.js et initialiser le chat une fois le script chargé
-	var s = document.createElement('script');
-	s.setAttribute('src', 'https://service.force.com/embeddedservice/5.0/esw.min.js');
-	s.onload = function() {
-		initESW('https://service.force.com');
-	};
-	document.body.appendChild(s);
 </script>
-</html>
