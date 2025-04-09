@@ -19,19 +19,19 @@
 		embedded_svc.settings.extraPrechatFormDetails = [{
 			"label":"Prénom",
 			"transcriptFields": ["FirstName__c"]
-		},{
+		}, {
 			"label":"Nom",
 			"transcriptFields": ["LastName__c"]
-		},{
+		}, {
 			"label":"Numéro de commande VIR/DO",
 			"transcriptFields": ["OrderNumber__c"]
-		},{
+		}, {
 			"label":"Adresse e-mail",
 			"transcriptFields": ["Email__c"]
-		},{
+		}, {
 			"label":"Téléphone",
 			"transcriptFields": ["Phone__c"]
-		},{
+		}, {
 			"label":"Code Postal",
 			"transcriptFields": ["PostalCode__c"]
 		}];
@@ -55,16 +55,21 @@
 			}
 		);
 
-		// Attente après l'initialisation pour garantir que le chat est complètement chargé
-		setTimeout(function() {
+		// Utilisation de MutationObserver pour surveiller l'élément du titre du chat
+		const observer = new MutationObserver(function(mutationsList, observer) {
 			const headerTitle = document.querySelector('.embeddedServiceSidebarHeader .sidebarHeaderTitle');
 			if (headerTitle && headerTitle.textContent.trim() === 'Chat') {
 				headerTitle.textContent = 'JP Bot';
 				console.log('✅ Titre du chat changé en "JP Bot"');
-			} else {
-				console.warn('❌ Titre non trouvé dans le DOM.');
+				observer.disconnect(); // On arrête l'observation une fois que le titre est modifié
 			}
-		}, 500); // 500ms pour laisser le chat se charger (ajuste si nécessaire)
+		});
+
+		// Observer les modifications du DOM dans le body
+		observer.observe(document.body, {
+			childList: true, // Observer l'ajout d'enfants dans le DOM
+			subtree: true    // Observer tous les sous-éléments
+		});
 	};
 
 	if (!window.embedded_svc) {
