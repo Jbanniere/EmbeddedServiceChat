@@ -47,8 +47,25 @@
 				isOfflineSupportEnabled: false
 			}
 		);
-                embedded_svc.settings.defaultMinimizedText = 'JP Bot';
+
+		// Modifier le texte des boutons de minimisation
+		embedded_svc.settings.defaultMinimizedText = 'JP Bot';
 		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)';
+
+		// Vérifier et modifier le titre du chat à intervalles réguliers
+		const checkAndChangeTitle = function() {
+			const chatHeader = document.querySelector('header.sidebarHeader h2');
+			if (chatHeader && chatHeader.textContent.trim() === 'Chat') {
+				chatHeader.textContent = 'JP Bot'; // Changer le titre en "JP Bot"
+				clearInterval(titleCheckInterval); // Arrêter l'intervalle une fois le titre modifié
+			}
+		};
+
+		// Vérifier toutes les 500ms pendant 10 secondes pour que le titre soit changé
+		const titleCheckInterval = setInterval(checkAndChangeTitle, 500); // Vérifier toutes les 500ms
+		setTimeout(() => {
+			clearInterval(titleCheckInterval); // Arrêter après 10 secondes
+		}, 10000); // Timeout de 10 secondes pour arrêter le script si l'élément n'est pas trouvé
 	};
 
 	if (!window.embedded_svc) {
