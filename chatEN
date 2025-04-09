@@ -34,10 +34,6 @@
 			}
 		);
 
-		// Modifier le texte des boutons de minimisation
-		embedded_svc.settings.defaultMinimizedText = 'JP Bot';
-		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)';
-
 		// Utilisation d'un MutationObserver pour surveiller le changement du titre
 		const observer = new MutationObserver(function(mutationsList, observer) {
 			const chatHeader = document.querySelector('header.sidebarHeader h2');
