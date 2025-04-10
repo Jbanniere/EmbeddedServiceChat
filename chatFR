@@ -66,7 +66,7 @@
 			}
 		);
 		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)'; 
-		embedded_svc.settings.buttonImage = 'https://github.com/Jbanniere/EmbeddedServiceChat/blob/main/LOGO.png';
+		embedded_svc.settings.buttonImage = 'https://raw.githubusercontent.com/Jbanniere/EmbeddedServiceChat/main/LOGO.png';
 	};
 
 	if (!window.embedded_svc) {
