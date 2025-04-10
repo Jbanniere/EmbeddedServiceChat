@@ -49,6 +49,8 @@
 		}];
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
+		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)'; 
+		embedded_svc.settings.buttonImage = 'https://raw.githubusercontent.com/Jbanniere/EmbeddedServiceChat/main/LOGO.png';
 
 		embedded_svc.init(
 			'https://vir--copyprod.sandbox.my.salesforce.com',
@@ -65,8 +67,7 @@
 				isOfflineSupportEnabled: false
 			}
 		);
-		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)'; 
-		embedded_svc.settings.buttonImage = 'https://raw.githubusercontent.com/Jbanniere/EmbeddedServiceChat/main/LOGO.png';
+		
 	};
 
 	if (!window.embedded_svc) {
