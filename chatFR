@@ -65,8 +65,8 @@
 				isOfflineSupportEnabled: false
 			}
 		);
-		embedded_svc.settings.defaultMinimizedText = 'JP Bot';
 		embedded_svc.settings.disabledMinimizedText = 'JP Bot (Hors ligne)'; 
+		embedded_svc.settings.buttonImage = 'https://github.com/Jbanniere/EmbeddedServiceChat/blob/main/LOGO.png';
 	};
 
 	if (!window.embedded_svc) {
