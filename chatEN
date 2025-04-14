@@ -29,19 +29,19 @@
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 		embedded_svc.settings.extraPrechatFormDetails = [{
-			"label":"Prénom",
+			"label":"First Name",
 			"transcriptFields": ["FirstName__c"]
 		},{
-			"label":"Nom",
+			"label":"Last Name",
 			"transcriptFields": ["LastName__c"]
 		},{
 			"label":"Numéro de commande JP Home/DO",
 			"transcriptFields": ["OrderNumber__c"]
 		},{
-			"label":"Adresse e-mail",
+			"label":"Email",
 			"transcriptFields": ["Email__c"]
 		},{
-			"label":"Téléphone",
+			"label":"Phone",
 			"transcriptFields": ["Phone__c"]
 		},{
 			"label":"Code Postal",
