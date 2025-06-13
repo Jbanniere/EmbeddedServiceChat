@@ -50,8 +50,8 @@
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 		embedded_svc.settings.prepopulatedPrechatFields = {
-		    FirstName__c: "Anonyme",
-		    LastName__c: "Utilisateur"
+		    FirstName: "Anonyme",
+		    LastName: "Utilisateur"
 		};
 
 		embedded_svc.init(
