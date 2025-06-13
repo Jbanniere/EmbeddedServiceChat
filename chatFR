@@ -30,10 +30,10 @@
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(affiche par défaut Nous contacter)
 		embedded_svc.settings.extraPrechatFormDetails = [{
 			"label":"Prénom",
-			"transcriptFields": ["FirstName__c"]
+			"transcriptFields": ["FirstName"]
 		},{
 			"label":"Nom",
-			"transcriptFields": ["LastName__c"]
+			"transcriptFields": ["LastName"]
 		},{
 			"label":"Numéro de commande JP Home/DO",
 			"transcriptFields": ["OrderNumber__c"]
