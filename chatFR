@@ -30,7 +30,8 @@
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(affiche par défaut Nous contacter)
 		embedded_svc.settings.extraPrechatFormDetails = [{
 			"label":"Prénom",
-			"transcriptFields": ["FirstName__c"]
+			"transcriptFields": ["FirstName__c"],
+			"displayToAgent": false
 		},{
 			"label":"Nom",
 			"transcriptFields": ["LastName__c"]
