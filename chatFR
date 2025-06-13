@@ -29,12 +29,6 @@
 		//embedded_svc.settings.fallbackRouting = []; //Un groupe d’ID de bouton, d’ID d’utilisateur ou userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(affiche par défaut Nous contacter)
 		embedded_svc.settings.extraPrechatFormDetails = [{
-			"label":"Prénom",
-			"transcriptFields": ["FirstName"]
-		},{
-			"label":"Nom",
-			"transcriptFields": ["LastName"]
-		},{
 			"label":"Numéro de commande JP Home/DO",
 			"transcriptFields": ["OrderNumber__c"]
 		},{
