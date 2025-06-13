@@ -29,6 +29,12 @@
 		//embedded_svc.settings.fallbackRouting = []; //Un groupe d’ID de bouton, d’ID d’utilisateur ou userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(affiche par défaut Nous contacter)
 		embedded_svc.settings.extraPrechatFormDetails = [{
+		label": "Prénom",
+		    "transcriptFields": ["FirstName__c"]
+		}, {
+		    "label": "Nom",
+		    "transcriptFields": ["LastName__c"]
+		},{
 			"label":"Numéro de commande JP Home/DO",
 			"transcriptFields": ["OrderNumber__c"]
 		},{
@@ -44,8 +50,8 @@
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 		embedded_svc.settings.prepopulatedPrechatFields = {
-		    FirstName: "Anonyme",
-		    LastName: "Utilisateur"
+		    FirstName__c: "Anonyme",
+		    LastName__c: "Utilisateur"
 		};
 
 		embedded_svc.settings.hiddenPrechatFields = ["FirstName__c", "LastName__c"];
